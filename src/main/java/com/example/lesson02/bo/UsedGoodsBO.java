@@ -14,7 +14,7 @@ public class UsedGoodsBO {
 	@Autowired	// DI(Dependency Injection)
 	private UsedGoodsDAO usedGoodsDAO;
 	
-	public List<UsedGoods> getUsedGoods() {
-		return usedGoodsDAO.seleUsedGoods();
+	public List<UsedGoods> getUsedGoodsList() {
+		return usedGoodsDAO.selectUsedGoods();
 	}
 }

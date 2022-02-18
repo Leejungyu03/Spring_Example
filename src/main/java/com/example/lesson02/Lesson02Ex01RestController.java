@@ -13,11 +13,11 @@ import com.example.lesson02.model.UsedGoods;
 public class Lesson02Ex01RestController {
 	
 	@Autowired
-	private UsedGoodsBO useedGoodsBO;
+	private UsedGoodsBO usedGoodsBO;
 	
 	// 요청 URL : http://localhost:8080/lesson02/ex01
 	@RequestMapping("/lesson02/ex01")
 	public List<UsedGoods> getUsedGoods() {
-		return UsedGoodsBO.getUsedGoodsList();
+		return usedGoodsBO.getUsedGoodsList();
 	}
 }

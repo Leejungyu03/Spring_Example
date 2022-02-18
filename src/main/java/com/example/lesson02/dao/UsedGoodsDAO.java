@@ -9,5 +9,5 @@ import com.example.lesson02.model.UsedGoods;
 @Repository
 public interface UsedGoodsDAO {
 
-		public List<UsedGoods> seleUsedGoods();
+		public List<UsedGoods> selectUsedGoods();
 }

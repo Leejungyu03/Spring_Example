@@ -3,11 +3,10 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
  <mapper namespace="com.example.lesson02.dao.UsedGoodsDAO;">
- 	<select id="seleUsedGoods" resultType="com.example.lesson02.model.UsedGoods">
+ 	<select id="selectUsedGoods" resultType="com.example.lesson02.model.UsedGoods">
  		SELECT
  			*
  		FROM
  			`used_goods`
- 		
  	</select>
  </mapper>
