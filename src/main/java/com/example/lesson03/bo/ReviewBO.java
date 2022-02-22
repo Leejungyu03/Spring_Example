@@ -14,4 +14,8 @@ public class ReviewBO {
 	public Review getReview(int id) {
 		return reviewDAO.selectReview(id);
 	}
+	
+	public int addReview(Review review) {
+		return reviewDAO.insertReview(review);
+	}
 }
