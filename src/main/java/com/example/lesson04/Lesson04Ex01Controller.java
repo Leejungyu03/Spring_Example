@@ -19,13 +19,13 @@ public class Lesson04Ex01Controller {
 	@Autowired
 	private UserBO newUserBO;
 	
-	// ìš”ì²­ URL: http://localhost/lesson04/ex01/1
+	// ¿äÃ» URL: http://localhost/lesson04/ex01/1
 	@RequestMapping(method = RequestMethod.GET, path = "/ex01/1")
 	public String addUserView() {
-		return "lesson04/add_user"; // view ê²½ë¡œ
+		return "lesson04/add_user"; // view °æ·Î
 	}
 	
-	// ìš”ì²­ URL: http://localhost/lesson04/ex01/add_user
+	// ¿äÃ» URL: http://localhost/lesson04/ex01/add_user
 	@PostMapping("/ex01/add_user")
 	public String addUser(
 			@RequestParam("name") String name,
@@ -36,17 +36,17 @@ public class Lesson04Ex01Controller {
 		// DB insert
 		newUserBO.addUser(name, yyyymmdd, introduce, email);
 
-		return "lesson04/after_add_user"; // ê²°ê³¼ jsp
+		return "lesson04/after_add_user"; // °á°ú jsp
 	}
 	
-	// ìš”ì²­ URL: http://localhost/lesson04/ex01/add_user
+	// ¿äÃ» URL: http://localhost/lesson04/ex01/add_user
 	@GetMapping("/ex01/2")
-	public String getUserView(Model model) { // view í™”ë©´ì— ë°ì´í„°ë¥¼ ë„˜ê²¨ì£¼ëŠ” ê°ì²´(ModelAndViewëŠ” ìš”ì¦˜ ì˜ ì‚¬ìš©í•˜ì§€ ì•ŠëŠ”ë‹¤.)
-		// DB select - ê°€ì¥ ìµœê·¼ì— ì¶”ê°€ëœ ì‚¬ëŒ í•œëª… ê°€ì ¸ì˜¤ê¸°
+	public String getUserView(Model model) { // view È­¸é¿¡ µ¥ÀÌÅÍ¸¦ ³Ñ°ÜÁÖ´Â °´Ã¼(ModelAndView´Â ¿äÁò Àß »ç¿ëÇÏÁö ¾Ê´Â´Ù.)
+		// DB select - °¡Àå ÃÖ±Ù¿¡ Ãß°¡µÈ »ç¶÷ ÇÑ¸í °¡Á®¿À±â
 		User newUser = newUserBO.getLastUser();
-		model.addAttribute("result", newUser); // ê²°ê³¼ jsp Viewì— ê²°ê³¼ ê°ì²´ê°’ì„ ë„˜ê²¨ì¤€ë‹¤.
-		model.addAttribute("subject", "íšŒì› ì •ë³´");		
+		model.addAttribute("result", newUser); // °á°ú jsp View¿¡ °á°ú °´Ã¼°ªÀ» ³Ñ°ÜÁØ´Ù.
+		model.addAttribute("subject", "È¸¿ø Á¤º¸");		
 
-		return "lesson04/get_last_user"; // ê²°ê³¼ jsp
+		return "lesson04/get_last_user"; // °á°ú jsp
 	}
 }
