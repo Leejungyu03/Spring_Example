@@ -48,4 +48,9 @@ public class Lesson05Ex01Controller {
 		
 		return "lesson05/ex02";
 	}
+	
+	@RequestMapping("/ex03")
+	public String ex03() {
+		return "lesson05/ex03";
+	}
 }

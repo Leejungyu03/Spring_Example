@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="com.example.lesson04.dao.StudentDAO">
+ 	<insert id="insertStudent" parameterType="com.example.lesson04.model.Student"
+ 	useGeneratedKeys="true" keyProperty="id">
+ 		INSERT INTO `student_info`
+ 		(
+ 			`name`
+			,`phoneNumber`
+			,`email`
+			,`dreamJob`
+ 		)
+ 		VALUES
+ 		(
+ 			#{name}
+			,#{phoneNumber}
+			,#{email}
+			,#{dreamJob}
+ 		)
+ 	</insert>
+ 	
+ 	<select id="selectStudentById" parameterType="int" resultType="com.example.lesson04.model.Student">
+ 		SELECT
+ 			`id`
+ 			,`name`
+			,`phoneNumber`
+			,`email`
+			,`dreamJob`
+ 		
+ 		FROM
+ 			`student_info`
+ 		WHERE
+ 			`id` = #{id}
+ 	</select>
+
+ </mapper>
