@@ -1,6 +1,7 @@
 package com.example.lesson05;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,12 +13,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/lesson05")
 @Controller
 public class Lesson05Ex01Controller {
+	
 	// 요청 url: http://localhost/lesson05/ex01
 	@RequestMapping("/ex01")
 	public String ex01() {
 		return "lesson05/ex01";
 	}
 	
+	// 요청 url: http://localhost/lesson05/ex02
 	@RequestMapping("/ex02")
 	public String ex02(Model model) {
 		List<String> fruits = new ArrayList<>();
@@ -49,8 +52,12 @@ public class Lesson05Ex01Controller {
 		return "lesson05/ex02";
 	}
 	
+	// 요청 url: http://localhost/lesson05/ex03
 	@RequestMapping("/ex03")
-	public String ex03() {
+	public String ex03(Model model) {
+		Date today = new Date();
+		model.addAttribute("today", today);
+		
 		return "lesson05/ex03";
 	}
 }
