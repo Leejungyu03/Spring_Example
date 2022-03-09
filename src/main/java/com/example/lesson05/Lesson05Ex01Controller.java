@@ -60,4 +60,10 @@ public class Lesson05Ex01Controller {
 		
 		return "lesson05/ex03";
 	}
+	
+	// 요청 url: http://localhost/lesson05/ex04
+	@RequestMapping("/ex04")
+	public String ex04() {
+		return "lesson05/ex04";
+	}
 }
