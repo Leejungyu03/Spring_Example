@@ -14,4 +14,6 @@ public interface UserDAO {
 			@Param("email") String email);
 	
 	public User selectLastUser();
+	
+	public boolean existUserByName(String name);
 }
